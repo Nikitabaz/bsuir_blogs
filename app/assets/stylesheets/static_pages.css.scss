@@ -15,6 +15,7 @@ html {
 
 body {
   padding-top: 60px;
+
 }
 
 section {
@@ -25,15 +26,32 @@ textarea {
   resize: vertical;
 }
 
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
+.homes {
+  background-image: url('back.jpg');
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.hero-unit {
-  /*background-color: gray;*/
+.center {
+  text-align: center;
+  /*background-image: url('fake.jpg');
+  background-size: 970px, 330px;
+  background-image: url('back.jpg');
+  background-size: 970px, 330px;
+  background-position: center;
+  background-repeat: no-repeat;*/
+  opacity: 0.9;
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 60px;
+    opacity: 6;
+  }
+
+  h2 {
+    margin-top: 60px;
+  }
 }
 
 /* typography */
@@ -50,12 +68,13 @@ h1 {
 }
 
 h2 {
+  font-family: calibri ;
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: black;
 }
 
 p {
@@ -65,19 +84,8 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
-  font: Times;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-  &:hover{
-  color: red;
-  text-decoration: none;
-  }
+  padding-top: 6px;
+  padding-bottom: 2px;
 }
 
 /* footer */
