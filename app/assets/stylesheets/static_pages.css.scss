@@ -27,18 +27,23 @@ textarea {
 }
 
 .homes {
-  background-image: url('back.jpg');
-  background-size: auto;
-  background-position: center;
-  background-repeat: no-repeat;
+  small {
+    color: #c6c6c6;
+  }
+  a {
+    color: #c6c6c6;
+    &:hover {
+      color: $white;
+    }
+  }
 }
 
 .center {
   text-align: center;
   /*background-image: url('fake.jpg');
-  background-size: 970px, 330px;*/
-  background-image: url('back.jpg');
   background-size: 970px, 330px;
+  background-image: url('back.jpg');
+  background-size: 970px, 330px;*/
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.9;
@@ -47,6 +52,7 @@ textarea {
     font-size: 2em;
     margin-bottom: 60px;
     opacity: 6;
+    color: black;
   }
 
   h2 {
@@ -91,14 +97,14 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin-top: 190px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: black;
   a {
-    color: $gray;
+    color: $grayDark;
     &:hover {
-      color: $grayDarker;
+      color: black;
     }
   }
   small {
