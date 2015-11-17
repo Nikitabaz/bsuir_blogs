@@ -44,7 +44,7 @@ textarea {
 
 .center {
   text-align: center;
-  /*background-image: url('fake.jpg');
+  /*background-image: url('dancefake.jpg');
   background-size: 970px, 330px;
   background-image: url('back.jpg');
   background-size: 970px, 330px;*/
@@ -122,4 +122,14 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+.photo{
+  width: 160px;
+  border-radius: 10000px;
+  float:left;
+}
+
+.icon{
+  width: 40px;
 }
