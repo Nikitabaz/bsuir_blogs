@@ -1,4 +1,4 @@
-<%= link_to gravatar_for(current_user, size: 52), current_user %>
+<%= image_tag current_user.avatar.url(:medium) %>
 <h1>
   <%= current_user.name %>
 </h1>

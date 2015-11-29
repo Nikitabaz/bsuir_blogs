@@ -26,10 +26,6 @@ class User < ActiveRecord::Base
   def feed
     Micropost.from_users_followed_by(self)
   end
-  #def feed
-    # Это предварительное решение. См. полную реализацию в "Following users".
-   # Micropost.where("user_id = ?", id)
-  #end
 
   def following?(other_user)
     relationships.find_by(followed_id: other_user.id)
@@ -42,6 +38,24 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
     relationships.find_by(followed_id: other_user.id).destroy!
   end
+
+  has_attached_file :avatar, 
+  :styles => {
+    :medium   => ['115x115#',  :jpg, :quality => 70],
+    :small    => ['75x75#',    :jpg, :quality => 70],
+    :tiny     => ['50x50#',    :jpg, :quality => 70]
+  },
+  :convert_options => {
+    :medium   => '-set colorspace sRGB -strip',
+    :small    => '-set colorspace sRGB -strip',
+    :tiny   => '-set colorspace sRGB -strip'
+  },
+  :default_url => "/images/:style/missing.png"
+
+  validates_attachment :avatar,
+    #:presence => true,
+    :size => { :in => 0..10.megabytes },
+    :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
 
   private
     def create_remember_token
