@@ -1,10 +1,11 @@
-<% provide(:title, @user.name) %>
+<%= csrf_meta_tags %>
+<% if signed_in? %> 
 <nav class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
     <div class="container">
         <div class="navbar-header page-scroll">
             <%= link_to "BSUIR Connect", root_path, class: "navbar-brand page-scroll" , id: "brand"%> 
         </div>
+
         <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Моя страница", root_path %></li>
             <li><%= link_to "Пользователи", users_path %></li>
@@ -22,29 +23,32 @@
             </li> 
         </ul>
     </div>
-  </div>
 </nav> 
 
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= image_tag @user.avatar.url(:medium) %>
-        <%= @user.name %>
-      </h1>
-    </section>
-     <section>
-      <%= render 'shared/stats' %>
-    </section>
-  </aside>
-  <div class="span8">
-    <%= render 'follow_form' if signed_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
-  </div>
-</div>
+<% else %>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand page-scroll" href="#page-top">BSUIR Connect</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#services">Возможности</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">О сайте</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#team">Команда</a>
+                </li>
+                <li><%= link_to "Войти", signin_path %></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<% end %>

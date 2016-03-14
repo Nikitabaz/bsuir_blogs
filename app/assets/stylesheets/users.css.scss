@@ -1,3 +1,439 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
+
+
+body {
+  background-image:url(http://www.w3cplus.com/demo/css3/loginform_rbbrt/bg.jpg);
+}
+
+form{
+  margin-top: 15%;
+}
+
+#error_explanation{
+  background-color: #E86D73;
+  text-align: left;
+  border-radius: 30px;
+  margin-top: 30px;
+  height: 210px;
+}
+
+.title{
+  padding-top: 7%;
+  margin-bottom: -10%;
+  font-size: 45px;
+}
+
+.content {
+  width:680px;
+  height:320px;    
+  margin:150px auto;
+}
+
+.form-wrapper {
+  margin:32px auto;
+  width:264px;
+  height:325px;
+  position:relative;
+  border:1px solid rgb(197,200,204);
+  background-color:rgb(248,249,250);
+  text-align:center;
+  border-radius:5px;
+  box-shadow:0 1px 0 rgb(255,255,255), 0 2px 0 rgb(197,200,204), 0 3px 0 rgb(255,255,255), 0 4px 0 rgb(197,200,204);/*纸张层叠效果*/
+}
+
+.form-wrapper:before {
+  content:"";
+  display:block;
+  height:37px;
+  border-bottom:1px solid rgb(197,200,204);
+  border-radius:5px 5px 0 0;
+  box-shadow:inset 2px 2px 0 rgb(255,255,255);
+}
+
+.form-wrapper .login-form {
+  padding-top:40px;
+  box-shadow:inset 2px 0 0 rgb(255,255,255);
+}
+.form-wrapper input[name="user[avatar]"]{
+  margin-top: 20px;
+}
+
+.form-wrapper input[name="user[name]"],
+.form-wrapper input[name="user[email]"],
+.form-wrapper input[name="user[password]"],
+.form-wrapper input[name="user[password_confirmation]"]{
+  height:40px !important; 
+  width: 200px;
+  margin:0 auto;
+  padding-left:15px;
+  display:block;
+  border:1px solid rgb(197,200,204);
+  background-color:rgb(228,230,233);
+}
+.form-wrapper input[name="user[name]"]{
+  border-bottom:none;
+  border-radius:5px 5px 0 0;
+  box-shadow:inset 0 1px 0 rgb(212,214,217);
+  outline:none;
+}
+.form-wrapper input[name="user[password_confirmation]"] {
+  border-radius:0 0 5px 5px;
+  outline:none;
+}
+.form-wrapper button[type="submit"] {
+    margin-top:25px;
+    cursor:pointer;
+    width:215px;
+    height:44px;
+    color:#fff;
+    font-size:20px;
+    border:none;
+    border-top:1px solid rgb(190,143,48);
+    position:relative;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(228,182,88)), color-stop(100%,rgb(218,149,78)));
+    background-size:213px 41px,215px 43px;
+    border-radius:5px;
+    box-shadow:inset 0 1px 0 rgb(242,220,175);
+    text-shadow:1px 1px 0 rgb(138,100,50);
+    transition:color 300ms linear;
+}
+.form-wrapper button[type="submit"]:hover {
+    opacity:0.9;
+    }
+
+.form-wrapper .linker {
+  position:absolute;
+  width:240px;
+  height:40px;
+  top:18px;
+  left:10px;
+}
+.linker .ring {
+  position:relative;
+  display:inline-block;
+  border:1px solid rgb(163,164,167);
+  background-color:rgb(220,222,225);
+  height:12px;
+  width:12px;
+  border-radius: 6px;
+  margin-right:33px;
+}
+.linker .ring:last-child {
+  margin-right:0;
+}
+.linker .ring:before {
+  content:"";
+  position:absolute;
+  bottom:-25px;
+  left:-1px;
+  border:1px solid rgb(163,164,167);
+  background-color:rgb(220,222,225);
+  height:12px;
+  width:12px;
+  border-radius: 6px;
+}
+.linker .ring:after{
+  content:"";
+  position:absolute;
+  top:2px;
+  left:2px;
+  width:6px;
+  height:30px;
+  border:1px solid rgb(202,202,202);
+  background-color:rgb(255,255,255);
+  border-radius: 3px;
+}
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/*.homes {
+  small {
+    color: #c6c6c6;
+  }
+  a {
+    color: #c6c6c6;
+    &:hover {
+      color: $white;
+    }
+  }
+}*/
+
+/*.btn {
+  margin-top: 60px;
+}*/
+
+.center {
+  text-align: center;
+  /*background-image: url('dancefake.jpg');
+  background-size: 970px, 330px;
+  background-image: url('back.jpg');
+  background-size: 970px, 330px;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 60px;
+    opacity: 6;
+    color: black;
+  }
+
+  h2 {
+    margin-top: 60px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-family: calibri ;
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: black;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+#logo {
+  float: left;
+  padding-top: 6px;
+  padding-bottom: 2px;
+}
+
+/* footer */
+
+footer {
+  margin-top: 110px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: black;
+  a {
+    // color: $grayDark;
+    &:hover {
+      color: black;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+
+.photo{
+  width: 160px;
+  border-radius: 10000px;
+  float:left;
+}
+
+.icon{
+  width: 40px;
+}
+
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid ;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid ;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid ;
+    &:last-child {
+      border-bottom: 1px solid ;
+    }
+  }
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: gray;
+}
+.gravatar {
+  border-radius: 40px;
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+.navbar-default .navbar-brand {
+  font-family:"Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+}
+
+#brand {
+  color:#03A9F4;
+  font-family:"Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+}

@@ -1,19 +1,39 @@
 <% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header page-scroll">
+      <%= link_to "BSUIR Connect", root_path, class: "navbar-brand page-scroll" %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Регистрация", signup_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1 class="title">ВОЙТИ</h1>
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(:session, url: sessions_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <p><%= f.submit "Sign in", class: "btn btn-large btn-primary" %></p>
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <div class="content">
+    <div class="form-wrapper">
+      <div class="linker"> 
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+      </div>
+      <%= form_for(:session, url: sessions_path) do |f| %>
+          <%= f.text_field :email, placeholder: "Логин" %>
+          <%= f.password_field :password, placeholder: "Пароль" %>
+          <%= f.button "ВОЙТИ" %>
+      <% end %>
+      <p>Новый пользователь? <%= link_to "Зарегистрируйся сейчас!", signup_path %></p>
+    </div>
+    </div>
   </div>
 </div>
+
+
