@@ -1,4 +1,5 @@
-<body class="homes">
+<body id="page-top" class="index">
+    <%= render 'layouts/header_homepage' %>
   <% if signed_in? %>
   <div class="row">
     <aside class="span4">
@@ -18,16 +19,264 @@
     </div>
   </div>
 <% else %>
-    <div class="center hero-unit">
-  <h1>Добро пожаловать в BSUIR blogs</h1>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Добро пожаловать на Bsuir Connect</div>
+                <div class="intro-heading">Присоединяйся к нам</div>
+                <!-- <a href="#services" class="page-scroll btn student-btn btn-primary btn-xl ">Я Студент</a> -->
+                <%= link_to "Регистрация", signup_path, class: "page-scroll btn student-btn btn-primary btn-xl" %>
+                <!-- <a href="#services" class="page-scroll btn teacher-btn btn-xl ">Я Преподаватель</a> -->
+            </div>
+        </div>
+    </header>
 
-  <h2>
-    Будь на связи с друзьями. Получай свежие новости о том, что происходит в университете.
-    И следи за событиями в реальном времени, с разных сторон.
-  </h2>
-  
-</div>
+    <!-- Services Section -->
+    <section id="services" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Возможности</h2>
+                    <h3 class="section-subheading text-muted">Для русского языка нету красивых шрифтов</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-bar-chart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Статистика успеваемости</h4>
+                    <p class="text-muted">Следи за своим прогрессом, отмечай выполненные лабораторные работы.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Интересные университетские события</h4>
+                    <p class="text-muted">Будь в курсе внутренних мероприятий, принимай активное участие в культурной жизни университета.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-list fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Органайзер</h4>
+                    <p class="text-muted">Делись своими достижениями, интересной и полезной информацией со своими друзьями.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">О сайте</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="<%= asset_path("about/1.jpg") %>" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2009-2011</h4>
+                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="<%= asset_path("about/2.jpg") %>" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>March 2011</h4>
+                                    <h4 class="subheading">An Agency is Born</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="<%= asset_path("about/3.jpg") %>" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>December 2012</h4>
+                                    <h4 class="subheading">Transition to Full Service</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="<%= asset_path("about/5.png") %>" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <!-- <h4>July 2014</h4> -->
+                                    <h4 class="subheading">Будь лучшим</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Присое
+                                    <br>диняйся
+                                    <br>к нам!
+                                </h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Наша команда</h2>
+                    <h3 class="section-subheading text-muted">Мы собрались для того, чтобы сделать этот мир лучше</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="<%= asset_path("team/1.jpg") %>" class="img-responsive img-circle" alt="">
+                        <h4>Никита Базыльчук</h4>
+                        <p class="text-muted">Team Lead</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-vk"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="<%= asset_path("team/2.jpg") %>" class="img-responsive img-circle" alt="">
+                        <h4>Владислав Артюхович</h4>
+                        <p class="text-muted">Front-end</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-vk"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="<%= asset_path("team/3.jpg") %>" class="img-responsive img-circle" alt="">
+                        <h4>Александ Бурый</h4>
+                        <p class="text-muted">Back-end</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-vk"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="<%= asset_path("team/4.jpg") %>" class="img-responsive img-circle" alt="">
+                        <h4>Вера Кулиш</h4>
+                        <p class="text-muted">QA</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-vk"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="<%= asset_path("team/5.jpg") %>" class="img-responsive img-circle" alt="">
+                        <h4>Дмитрий Саврицкий</h4>
+                        <p class="text-muted">SEO</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-vk"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="<%= asset_path("team/6.jpg") %>" class="img-responsive img-circle" alt="">
+                        <h4>Егор брель</h4>
+                        <p class="text-muted">Lead Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-vk"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Aside -->
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6"></div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="http://fksis.bsuir.by/">
+                        <img src="<%= asset_path("logos/fksis.png") %>" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="http://bsuir.by/">
+                        <img src="<%= asset_path("logos/bsuir.png") %>" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6"></div>
+            </div>
+        </div>
+    </aside>
 <%end%>
 </body>
