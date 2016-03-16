@@ -4,12 +4,6 @@
 // @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
 
-
-
-body {
-  background-image:url(http://www.w3cplus.com/demo/css3/loginform_rbbrt/bg.jpg);
-}
-
 form{
   margin-top: 15%;
 }
@@ -440,4 +434,15 @@ aside {
 
 .pagination{
   margin-left: 20px;
+}
+
+.span8{
+  position: relative;
+  margin-left: 30%;
+  float: left;
+}
+
+aside{
+  position: absolute;
+  float: left;
 }
