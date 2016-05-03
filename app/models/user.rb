@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, 
   :styles => {
-    :medium   => ['115x115#',  :jpg, :quality => 70],
+    :medium   => ['380x380#',  :jpg, :quality => 70],
     :small    => ['75x75#',    :jpg, :quality => 70],
     :tiny     => ['50x50#',    :jpg, :quality => 70]
   },

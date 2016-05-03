@@ -14,11 +14,9 @@
                 Аккаунт <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Профиль", current_user %></li>
                 <li><%= link_to "Настройки", edit_user_path(current_user) %></li>
                 <li class="nav-divider"></li>
                 <li><%= link_to "Выход", signout_path, method: "delete" %></li>
-
               </ul> 
             </li> 
         </ul>
@@ -26,26 +24,57 @@
   </div>
 </nav> 
 
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= image_tag @user.avatar.url(:medium) %>
-        <%= @user.name %>
-      </h1>
-    </section>
-     <section>
-      <%= render 'shared/stats' %>
-    </section>
-  </aside>
-  <div class="span8">
-    <%= render 'follow_form' if signed_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
-  </div>
-</div>
+<div role="main">
+        <div class="row">
+            <p class="no-bradcrumbs"/></p>
+            <%= render 'follow_form' if signed_in? %>
+            <section class="span4" style="margin-top: 90px; width: 380px;">
+                <article class="element-box">
+                    <header class="element-top-bar clearfix" style="background-image:none;">
+                        <a href="" class="user-info fl" ><%= @user.name %></a>
+                    </header>
+                    <figure>
+                            <img src="<%= @user.avatar.url(:medium) %>" alt="image" style="width:380px;">
+                    </figure>
+                    
+                    <div class="element-profile-line">
+                    <table>
+                        <tr>
+                            <th> <a>Группа:</a> </th>
+                            <th> <a><%= @user.group %></a> </th>
+                        </tr>
+                        <tr>
+                            <th> <a>Факультет:</a> </th>
+                            <th> <a>ФКСиС</a> </th>
+                        </tr>
+                        <tr>
+                            <th> <a>Специальность:</a> </th>
+                            <th> <a>ВМСиС</a> </th>
+                        </tr>
+                    </table>
+                    
+                    </div>
+                </article> 
+            </section> 
+
+            <section class="span4" style="width: 750px; margin-left: 420px; margin-top: -608px;">
+            
+                <article class="element-box" style="min-height: 210px;" >
+
+                    <header class="element-top-bar clearfix" style="background-image:none;">
+                        <a href="" class="user-info fl">Сообщений (<%= @user.microposts.count %>)</a>
+                    </header>
+
+                    <% if @user.microposts.any? %>
+                        <ol class="microposts" style="color: white;">
+                            <%= render @microposts %>
+                        </ol>
+                        <%= will_paginate @microposts %>
+                    <% end %>
+                    
+
+                </article> 
+            </section>  
+        </div> 
+    </div> 
+</div> 

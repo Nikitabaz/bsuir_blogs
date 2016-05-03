@@ -15,10 +15,8 @@ describe "Authentication" do
     before { visit signin_path }
 
     describe "with invalid information" do
-      before { click_button "Sign in" }
-
-      it { should have_title('Sign in') }
-      it { should have_selector('div.alert.alert-error') }
+      before { click_button "ВОЙТИ" }
+      it { should have_title('BsuirConnect') }
     end
 
     describe "after visiting another page" do
@@ -29,15 +27,14 @@ describe "Authentication" do
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
       before do
-        fill_in "Email",    with: user.email.upcase
-        fill_in "Password", with: user.password
-        click_button "Sign in"
+        fill_in "Логин",    with: user.email.upcase
+        fill_in "Пароль", with: user.password
+        click_button "ВОЙТИ"
       end
-      
 
-      it { should have_title(user.name) }
-      it { should have_link('Users',       href: users_path) }
-      it { should have_link('Profile',     href: user_path(user)) }
+      it { should have_title('BsuirConnect') }
+      it { should have_link('Моя страница',href: root_path) }
+      it { should have_link('Пользователи',href: user_path(user)) }
       it { should have_link('Settings',    href: edit_user_path(user)) }
       it { should have_link('Sign out',    href: signout_path) }
       it { should_not have_link('Sign in', href: signin_path) }

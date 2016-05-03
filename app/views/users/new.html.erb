@@ -1,9 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<style>
-  body{
-    background-image:url(http://www.w3cplus.com/demo/css3/loginform_rbbrt/bg.jpg);
-  }
-</style>
+<body style="background: none; background-image:url(http://www.w3cplus.com/demo/css3/loginform_rbbrt/bg.jpg);">
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header page-scroll">
@@ -31,6 +27,7 @@
       <%= form_for(@user) do |f| %>
       <%= f.text_field :name, placeholder: "Имя"%>
       <%= f.text_field :email, placeholder: "Email" %>
+      <%= f.text_field :group, placeholder: "Group" %>
       <%= f.password_field :password,  placeholder: "Пароль" %>
       <%= f.password_field :password_confirmation,  placeholder: "Подтверждение пароля" %>
       <!-- <%= f.file_field :avatar %> -->
@@ -41,6 +38,13 @@
     </div>
   </div>
 </div>
+</body>
+
+<style>
+  body{
+    background-image:url(http://www.w3cplus.com/demo/css3/loginform_rbbrt/bg.jpg);
+  }
+</style>
 
 <!-- <div class="row">
   <div class="span6 offset3">

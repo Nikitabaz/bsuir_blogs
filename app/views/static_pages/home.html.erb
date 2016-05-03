@@ -1,7 +1,7 @@
 <body id="page-top" class="index">
     <%= render 'layouts/header_homepage' %>
   <% if signed_in? %>
-  <div class="row">
+  <!-- <div class="row">
     <aside class="span4">
       <section class="show">
         <%= render 'shared/user_info' %>
@@ -17,11 +17,171 @@
       <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
     </div>
-  </div>
-<% else %>
+  </div> -->
+<div class="container">
+        
+        <div role="main">
+            <div class="row">
 
+                <p class="no-bradcrumbs"/></p>
+
+                <section id="section_avatar" class="span4">
+                
+                    <article class="element-box">
+
+                        <header class="element-top-bar clearfix" style="background-image:none;">
+                            <%= link_to current_user.name, current_user , class: "user-info fl" %>
+                        </header>
+                        <figure>
+                                <img src="<%= current_user.avatar.url(:medium) %>" alt="image" style="width:380px;">
+                        </figure>
+                        
+                        <div class="element-profile-line">
+                        <table>
+                            <tr>
+                                <th> <a>Группа:</a> </th>
+                                <th> <a><%= current_user.group %></a> </th>
+                            </tr>
+                            <tr>
+                                <th> <a>Факультет:</a> </th>
+                                <th> <a>ФКСиС</a> </th>
+                            </tr>
+                            <tr>
+                                <th> <a>Специальность:</a> </th>
+                                <th> <a>ВМСиС</a> </th>
+                            </tr>
+                            <tr>
+                                <%= render 'shared/stats' %>
+                            </tr>
+                        </table>
+                        </div>
+
+                    </article> <!-- /.element-box [image]-->
+
+                </section> <!-- /.span9 [main content] -->
+                    
+                <section id="section_labs" class="span4">
+                    
+                    <div class="sidebar-element">
+                        
+                        <h3>Лабораторные</h3>
+
+                        <ul class="category-list">
+                            <li class="blue-bage">
+                                <h3>
+                                    <a href="#">ТРиТПО</a>
+                                </h3>
+                                <span></span>
+                                <div class="square-active"></div>
+                                <div class="addButton">+</div>
+                                    <p></p>
+                                <div class="deleteButton">-</div>
+                            </li>
+                            <li class="red-bage">
+                                <h3>
+                                    <a href="#">АКСиС</a>
+                                </h3>
+                                <span></span>
+                                <div class="square-active"></div>
+                                <div class="addButton">+</div>
+                                    <p></p>
+                                <div class="deleteButton">-</div>
+                            </li>
+                            <li class="green-bage">
+                                <h3>
+                                    <a href="#">ЦОСиИ</a>
+                                </h3>
+                                <span></span>
+                                <div class="square-active"></div>
+                                <div class="addButton">+</div>
+                                    <p></p>
+                                <div class="deleteButton">-</div>
+                            </li>
+                        </ul>
+                    </div> <!-- /.sidebar-element -->
+
+                    <div class="sidebar-element" style="margin-top: -19px;">
+                        
+                        <div id="calendar_wrap">
+                            <table id="wp-calendar">
+                                <caption>
+                                    <a href="#" id="prev" style="padding-left: 25px;">&lsaquo;</a>
+                                    <span style="padding-left: 43%;">Март</span>
+                                    <a href="#" id="next" style="padding-left: 25px;">&rsaquo;</a>
+                                </caption>
+                    
+                                <thead>
+                                    <tr>
+                                        <th scope="col" title="Monday">Пн</th>
+                                        <th scope="col" title="Tuesday">Вт</th>
+                                        <th scope="col" title="Wednesday">Ср</th>
+                                        <th scope="col" title="Thursday">Чт</th>
+                                        <th scope="col" title="Friday">Пт</th>
+                                        <th scope="col" title="Saturday">Сб</th>
+                                        <th scope="col" title="Sunday">Вс</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td><td>12</td><td>13</td><td><a href="#">14</a></td><td>15</td><td>16</td><td>17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td><td>19</td><td><a href="#">20</a></td><td>21</td><td>22</td><td>23</td><td>24</td>
+                                    </tr>
+                                    <tr>
+                                        <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> <!-- /.calendar_wp -->
+                        
+                    </div><!-- /.sidebar-element -->
+
+                </section> <!-- /.span3 [sidebar] -->
+
+                <section id="section_form"class="span4">
+                
+                    <article class="element-box" style="min-height: 210px;">
+
+                        <header class="element-top-bar clearfix" style="background-image:none;">
+                            <a href="" class="message-info fl">Новое сообщение</a>
+                            <!-- <b class="time-info fr">17:30 PM</b> -->
+                        </header>
+                        <%= render 'shared/micropost_form' %>
+                    </article> 
+        
+                </section> 
+
+                <section id="section_post" class="span4">
+                
+                    <article class="element-box" style="min-height: 210px;">
+
+                        <header class="element-top-bar clearfix" style="background-image:none;">
+                            <a href="" class="user-info fl">Cтена</a>
+                            <!-- <b class="time-info fr">17:30 PM</b> -->
+                        </header>
+                         <%= render 'shared/feed' %> 
+                    </article> 
+        
+                </section>   
+                
+            </div> <!-- /.row -->
+        
+        </div> <!-- /main role -->
+
+    </div> <!-- /.container [main] -->
+
+<% else %>
+<body style="background: none;">
     <!-- Header -->
-    <header>
+    <header style="margin-left: -15%; margin-right: -15%;">
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Добро пожаловать на Bsuir Connect</div>
@@ -34,7 +194,7 @@
     </header>
 
     <!-- Services Section -->
-    <section id="services" >
+    <section id="services" style="margin-left: -15%;margin-right: -15%;padding: 100px 0;" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -71,90 +231,8 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">О сайте</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<%= asset_path("about/1.jpg") %>" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<%= asset_path("about/2.jpg") %>" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<%= asset_path("about/3.jpg") %>" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<%= asset_path("about/5.png") %>" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <!-- <h4>July 2014</h4> -->
-                                    <h4 class="subheading">Будь лучшим</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Присое
-                                    <br>диняйся
-                                    <br>к нам!
-                                </h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Team Section -->
-    <section id="team" >
+    <section id="team" style="margin-left: -15%;margin-right: -15%;padding: 100px 0;background-color: #f7f7f7;" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -243,7 +321,7 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="<%= asset_path("team/6.jpg") %>" class="img-responsive img-circle" alt="">
-                        <h4>Егор брель</h4>
+                        <h4>Егор Брель</h4>
                         <p class="text-muted">Lead Developer</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-vk"></i></a>
@@ -278,5 +356,33 @@
             </div>
         </div>
     </aside>
+
+    <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; BSUIRConnect 2016</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li><%= link_to "Contact", contact_path %></li>
+                    <li><%= link_to "Privacy Policy",   about_path %></li>
+                    <li><%= link_to "Terms of Use", contact_path %></li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+</footer>
+<body>
 <%end%>
 </body>
