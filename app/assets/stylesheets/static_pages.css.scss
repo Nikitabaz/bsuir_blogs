@@ -1261,13 +1261,29 @@ hr {
 .element-profile-line th:first-child{/* ñòðîêà ïðîôèëÿ */
   line-height: 1;
   text-align: left;
-  padding-left: 0px; 
+  padding-left: 0px;
 }
 
 .element-profile-line table tr th:last-child{/* ñòðîêà ïðîôèëÿ */
   line-height: 1;
   text-align: left;
   padding-bottom: 20px;
+}
+
+.post-tab a
+{
+  padding-top: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.vote-field .vote-option
+{
+  padding-top: 15px;
+   height:30px;
+   width: 250px;
+   margin-left: 90px;
+   margin-top: 5px;
 }
 
 /*=============== Sidebar style ===============*/
@@ -1317,10 +1333,11 @@ hr {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  cursor: pointer;
 }
 
 .deleteButton{
-  
+
   content: '-';
   width: 48px;
   height: 48px;
@@ -1337,6 +1354,7 @@ hr {
   margin-top: -96px;
   margin-bottom: 73px;
   margin-left: 280px;
+    cursor: pointer;
 }
 
 //îáíîâè
@@ -1621,28 +1639,28 @@ blockquote > p {
 
 #section_avatar{
   margin-left: -35px;
-  margin-top: 70px; 
-  width: 380px; 
+  margin-top: 70px;
+  width: 380px;
   position: fixed;
 }
 
 #section_labs{
-  width: 370px; 
-  margin-left: 25%; 
-  margin-top: 70px; 
+  width: 370px;
+  margin-left: 25%;
+  margin-top: 70px;
   position: fixed;
 }
 
 #section_form{
-  width: 430px; 
-  margin-left: 750px; 
-  margin-top: 94px; 
+  width: 430px;
+  margin-left: 750px;
+  margin-top: 94px;
 }
 
 #section_post{
-  width: 430px; 
-  margin-left: 750px; 
-  margin-top: -25px; 
+  width: 430px;
+  margin-left: 750px;
+  margin-top: -25px;
 }
 
 textarea{
