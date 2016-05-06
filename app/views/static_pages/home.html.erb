@@ -19,14 +19,14 @@
     </div>
   </div> -->
 <div class="container">
-        
+
         <div role="main">
             <div class="row">
 
                 <p class="no-bradcrumbs"/></p>
 
                 <section id="section_avatar" class="span4">
-                
+
                     <article class="element-box">
 
                         <header class="element-top-bar clearfix" style="background-image:none;">
@@ -35,7 +35,7 @@
                         <figure>
                                 <img src="<%= current_user.avatar.url(:medium) %>" alt="image" style="width:380px;">
                         </figure>
-                        
+
                         <div class="element-profile-line">
                         <table>
                             <tr>
@@ -59,11 +59,11 @@
                     </article> <!-- /.element-box [image]-->
 
                 </section> <!-- /.span9 [main content] -->
-                    
+
                 <section id="section_labs" class="span4">
-                    
+
                     <div class="sidebar-element">
-                        
+
                         <h3>Лабораторные</h3>
 
                         <ul class="category-list">
@@ -101,7 +101,7 @@
                     </div> <!-- /.sidebar-element -->
 
                     <div class="sidebar-element" style="margin-top: -19px;">
-                        
+
                         <div id="calendar_wrap">
                             <table id="wp-calendar">
                                 <caption>
@@ -109,7 +109,7 @@
                                     <span style="padding-left: 43%;">Март</span>
                                     <a href="#" id="next" style="padding-left: 25px;">&rsaquo;</a>
                                 </caption>
-                    
+
                                 <thead>
                                     <tr>
                                         <th scope="col" title="Monday">Пн</th>
@@ -141,39 +141,41 @@
                                 </tbody>
                             </table>
                         </div> <!-- /.calendar_wp -->
-                        
+
                     </div><!-- /.sidebar-element -->
 
                 </section> <!-- /.span3 [sidebar] -->
 
                 <section id="section_form"class="span4">
-                
-                    <article class="element-box" style="min-height: 210px;">
 
-                        <header class="element-top-bar clearfix" style="background-image:none;">
-                            <a href="" class="message-info fl">Новое сообщение</a>
+                  <article class="element-box" style="min-height: 210px;">
+                    <header class="element-top-bar clearfix" style="background-image:none;">
+                          <div class="post-tab">
+                            <a class="message-info fl" onclick="changeTab(this);">Новое сообщение</a>
                             <!-- <b class="time-info fr">17:30 PM</b> -->
-                        </header>
-                        <%= render 'shared/micropost_form' %>
-                    </article> 
-        
-                </section> 
-
-                <section id="section_post" class="span4">
-                
-                    <article class="element-box" style="min-height: 210px;">
-
-                        <header class="element-top-bar clearfix" style="background-image:none;">
-                            <a href="" class="user-info fl">Cтена</a>
+                          </div>
+                          <div class="post-tab">
+                            <a class="message-info fl" onclick="changeTab(this);">Новый опрос</a>
                             <!-- <b class="time-info fr">17:30 PM</b> -->
-                        </header>
-                         <%= render 'shared/feed' %> 
-                    </article> 
-        
-                </section>   
-                
+                          </div>
+                    </header>
+                    <%= render 'shared/micropost_form' %>
+
+                  <div class="vote-field">
+                    <textarea placeholder="Введите вопрос..." id="vote_content"></textarea>
+                    <input type="submit" id="addButtonVote" class="btn btn-large btn-primary btn_micpost" value="Добавить вариант" onclick="addVoteOption()"></input>
+                    <input type="submit" id="removeButtonVote" class="btn btn-large btn-primary btn_micpost" value="Удалить вариант" onclick="removeVoteOption()"></input>
+                    <input type="text" class="vote-option"></input>
+                    <input type="submit" id="acceptVote" value="Опубликовать" class="btn btn-large btn-primary btn_micpost"></input>
+                  </div>
+
+
+                </article>
+
+                </section>
+
             </div> <!-- /.row -->
-        
+
         </div> <!-- /main role -->
 
     </div> <!-- /.container [main] -->
